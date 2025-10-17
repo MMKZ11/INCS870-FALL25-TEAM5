@@ -1,0 +1,5 @@
+data/
+results/
+*.parquet
+*.log
+.ipynb_checkpoints/
