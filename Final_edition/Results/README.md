@@ -1,12 +1,17 @@
-# Final results (LightGBM + EFB & GOSS on CICIoT2023)
+# Final results (10-feature LightGBM on CICIoT2023 10-class subset)
 
-This folder summarizes the **final experimental results** of the INCS870 project.
-All results are obtained on the same subset of the **CICIoT2023** dataset using
-**10 selected features** and a fixed train/test split.
+This folder contains the **final results** for the INCS870 project.
 
-We compare four LightGBM configurations:
+All experiments here are run on the **10-class subset** of CICIoT2023
+described in `../data/README.md`, using a **10-feature subset**
+selected from the original 40 columns.
 
-1. **Baseline** – GBDT, no EFB, no GOSS  
-2. **EFB only** – Baseline + Exclusive Feature Bundling  
-3. **GOSS only** – Baseline + Gradient-based One-Side Sampling  
-4. **EFB + GOSS** – both techniques enabled
+The main comparison focuses on:
+
+- Baseline: **GBDT** (LightGBM, no EFB)
+- EFB+GBDT: **GBDT with Exclusive Feature Bundling (EFB)** enabled
+
+The goal is to show that EFB can be applied on this IoT intrusion
+detection task **without degrading the macro-level performance**
+(accuracy, F1, recall), while reducing the effective feature
+dimensionality in more sparse/high-dimensional settings.
